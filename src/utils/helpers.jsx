@@ -101,8 +101,8 @@ export const trivia = [
         id: 6,
         question: 'Verdadero o Falso: Los Estados Unidos fue el primer país en poner al hombre en el ESPACIO',
         options: [
-            { isAnswer: true, selected: false, text: 'Verdadero', },
-            { isAnswer: false, selected: false, text: 'Falso', },
+            { isAnswer: false, selected: false, text: 'Verdadero', },
+            { isAnswer: true, selected: false, text: 'Falso', },
         ],
     },
     {

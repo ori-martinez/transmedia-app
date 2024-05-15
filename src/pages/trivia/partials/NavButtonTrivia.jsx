@@ -7,7 +7,7 @@ export const NavButtonTrivia = ({ dataTrivia, item, showResults, sliceActual, se
     // CONDICIONAL
     /* Comprobación del Slice Actual Diferente de 1 */
     if (sliceActual === 1) return (
-        <div className="flex items-center justify-end">
+        <div className="flex items-center justify-center">
             <button
                 className="px-4 py-1 mt-4 inline-flex items-center bg-violet-500 rounded-full text-xs text-white font-bold transition-all ease-in-out disabled:bg-violet-500 hover:bg-violet-700 sm:text-sm"
                 disabled={!item.done}
@@ -22,7 +22,7 @@ export const NavButtonTrivia = ({ dataTrivia, item, showResults, sliceActual, se
     // CONDICIONAL
     /* Comprobación del Slice Actual Diferente del Tamaño del Arreglo con las Preguntas de la Trivia */
     if (sliceActual === dataTrivia.length) return (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-around">
             <button
                 className="px-4 py-1 mt-4 inline-flex items-center bg-violet-500 rounded-full text-xs text-white font-bold transition-all ease-in-out hover:bg-violet-700 sm:text-sm"
                 onClick={() => setSliceActual(sliceActual - 1)}
@@ -43,7 +43,7 @@ export const NavButtonTrivia = ({ dataTrivia, item, showResults, sliceActual, se
     
     // RETORNO
     return (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-around">
             <button
                 className="px-4 py-1 mt-4 inline-flex items-center bg-violet-500 rounded-full text-xs text-white font-bold transition-all ease-in-out hover:bg-violet-700 sm:text-sm"
                 onClick={() => setSliceActual(sliceActual - 1)}

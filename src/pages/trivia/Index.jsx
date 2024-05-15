@@ -63,88 +63,88 @@ const Index = () => {
         {
             id: 5,
             done: false,
-            question: '¿Por qué Dorothy estaba nerviosa por la nueva computadora IBM 7090 en la NASA?',
             options: [
                 { isAnswer: false, selected: false, text: 'Era un peligro para el edificio.', },
                 { isAnswer: false, selected: false, text: 'No sabía para que servía la computadora.', },
                 { isAnswer: true, selected: false, text: 'Podría dejar sin empleo a todo su departamento.', },
                 { isAnswer: false, selected: false, text: 'Porque consideraba que era un dispositivo del demonio.', },
             ],
+            question: '¿Por qué Dorothy estaba nerviosa por la nueva computadora IBM 7090 en la NASA?',
         },
         {
             id: 6,
             done: false,
-            question: 'Verdadero o Falso: Los Estados Unidos fue el primer país en poner al hombre en el ESPACIO',
             options: [
                 { isAnswer: false, selected: false, text: 'Verdadero', },
                 { isAnswer: true, selected: false, text: 'Falso', },
             ],
+            question: 'Verdadero o Falso: Los Estados Unidos fue el primer país en poner al hombre en el ESPACIO',
         },
         {
             id: 7,
             done: false,
-            question: '¿Qué quería lograr Mary cuando fue a la corte?',
             options: [
                 { isAnswer: true, selected: false, text: 'Obtener permiso para tomar clases en una escuela de blancos.', },
                 { isAnswer: false, selected: false, text: 'Quería que la NASA se deshiciera de la nueva computadora de IBM.', },
                 { isAnswer: false, selected: false, text: 'Divorciarse de su esposo.', },
                 { isAnswer: false, selected: false, text: 'Quería permiso para ir a la escuela y obtener su diploma de "High School".', },
             ],
+            question: '¿Qué quería lograr Mary cuando fue a la corte?',
         },
         {
             id: 8,
             done: false,
-            question: 'Antes de que el cohete despegue, ¿a quién le pide John Glenn que resuelva el problema matemático?',
             options: [
                 { isAnswer: false, selected: false, text: 'a Harrison', },
                 { isAnswer: false, selected: false, text: 'Cancela el lanzamiento porque nadie resuelve el problema.', },
                 { isAnswer: false, selected: false, text: 'a Dorothy', },
                 { isAnswer: true, selected: false, text: 'a Katherine', },
             ],
+            question: 'Antes de que el cohete despegue, ¿a quién le pide John Glenn que resuelva el problema matemático?',
         },
         {
             id: 9,
             done: false,
-            question: '¿Qué método antiguo se sugirió para resolver el problema matemático?',
             options: [
                 { isAnswer: false, selected: false, text: 'Teorema de Pitágoras', },
                 { isAnswer: true, selected: false, text: 'Método de Euler', },
                 { isAnswer: false, selected: false, text: 'Ecuaciones Diferenciales', },
                 { isAnswer: false, selected: false, text: 'Leyes de Newton', },
             ],
+            question: '¿Qué método antiguo se sugirió para resolver el problema matemático?',
         },
         {
             id: 10,
             done: false,
-            question: '¿Cuando mueven a Katherine a su antiguo departamento, que regalo le da el "Space Task Force"?',
             options: [
                 { isAnswer: false, selected: false, text: 'Un cheque por $1,000 dólares', },
                 { isAnswer: false, selected: false, text: 'Unos aretes de diamantes', },
                 { isAnswer: true, selected: false, text: 'Un collar de perlas', },
                 { isAnswer: false, selected: false, text: 'Una cafetera', },
             ],
+            question: '¿Cuando mueven a Katherine a su antiguo departamento, que regalo le da el "Space Task Force"?',
         },
         {
             id: 11,
             done: false,
-            question: '¿Qué lenguaje computacional tuvo que aprender Dorothy para operar la computadora de la IBM?',
             options: [
                 { isAnswer: true, selected: false, text: 'Fortran', },
                 { isAnswer: false, selected: false, text: 'C+', },
                 { isAnswer: false, selected: false, text: 'Microsoft', },
                 { isAnswer: false, selected: false, text: 'Google', },
             ],
+            question: '¿Qué lenguaje computacional tuvo que aprender Dorothy para operar la computadora de la IBM?',
         },
         {
             id: 12,
             done: false,
-            question: '¿Cuál era el título del puesto de Katherine en la NASA?',
             options: [
                 { isAnswer: false, selected: false, text: 'Escritora', },
                 { isAnswer: false, selected: false, text: 'Secretaria', },
                 { isAnswer: true, selected: false, text: 'Computadora', },
                 { isAnswer: false, selected: false, text: 'Calculadora', },
             ],
+            question: '¿Cuál era el título del puesto de Katherine en la NASA?',
         },
     ]);
     const [ newDataTrivia, setNewDataTrivia ] = useState([]);           /* Nuevo Arreglo con las Preguntas para las Selecciones Erróneas */
@@ -213,7 +213,7 @@ const Index = () => {
                 /* Comprobación del Estado de Muestra de los Resultados */
                 !show
                     ? dataTrivia.map((item) => (
-                        <div className={`w-96 sm:w-[36rem] lg:w-[48rem] ${sliceActual !== item.id && 'hidden'}`} key={item.id}>
+                        <div className={`w-80 sm:w-[36rem] lg:w-[48rem] ${sliceActual !== item.id && 'hidden'}`} key={item.id}>
                             <p className="mb-4 text-sm text-gray-800 text-center font-semibold sm:text-lg">{ item.question }</p>
 
                             <div className="p-8 grid gap-4 bg-gray bg-opacity-40 rounded-md sm:grid-cols-2">
@@ -237,9 +237,9 @@ const Index = () => {
                         </div>
                     ))
                     : (
-                        <div className="w-96 sm:w-[36rem] lg:w-[48rem] flex flex-col items-center justify-center">
+                        <div className="w-80 sm:w-[36rem] lg:w-[48rem] flex flex-col items-center justify-center">
                             <p className="mb-2 text-2xl text-violet-500 font-bold font-basker sm:text-3xl">{ getMessageTotal(total).fanTitle }</p>
-                            <p className="mb-4 text-sm text-gray-800 sm:text-base">{ getMessageTotal(total).message }</p>
+                            <p className="mb-4 text-sm text-gray-800 text-center sm:text-base">{ getMessageTotal(total).message }</p>
                             <p className="mb-8 text-base sm:text-xl">
                                 <span className="text-blue-light font-bold">Total de Aciertos:</span> { total }
                             </p>

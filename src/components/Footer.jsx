@@ -1,3 +1,6 @@
+/* Router */
+import { Link } from "react-router-dom";
+import { IoLogoInstagram } from "react-icons/io";
 // COMPONENTE
 /* Pie de las Páginas */
 export const Footer = () => (
@@ -5,6 +8,11 @@ export const Footer = () => (
         <div className='border-t border-gray-200 px-12 py-8 text-sm text-blue-dark text-center sm:text-left'>
             <span className='block sm:mr-1 sm:inline'>2024 &copy; <b>Team FORO</b>.</span>
             <span className='block sm:inline'>Todos los Derechos Reservados.</span>
+            <div className='flex items-center justify-center sm:mt-1 sm:justify-start'>
+                Siguenos en <Link target='_blank' to='https://www.instagram.com/talentos_ocultos_fans?igsh=MXIzd3B0ZnIzYmN6aA%3D%3D&utm_source=qr'>
+                    <IoLogoInstagram  className="w-5 h-5 sm:w-6 sm:h-6" />
+                </Link>
+            </div>
         </div>
     </footer>
 );

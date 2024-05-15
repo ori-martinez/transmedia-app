@@ -15,7 +15,7 @@ const Index = () => (
             />
 
             <div className="mx-6 my-8 flex flex-col col-span-3 sm:col-span-2 sm:overflow-auto">
-                <div className='pr-2 max-h-32 grid grid-cols-2 gap-x-4 gap-y-2 text-xs sm:max-h-60 sm:text-sm'>
+                <div className='pr-2 max-h-2 grid grid-cols-2 gap-x-4 gap-y-2 text-xs sm:max-h-60 sm:text-sm'>
                     <div className='col-span-2 sm:col-span-1'>
                         <span className="font-bold">Título Original:</span> Hidden Figures
                     </div>

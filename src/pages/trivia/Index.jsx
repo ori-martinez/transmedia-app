@@ -256,7 +256,7 @@ Te reto a demostrar cuánto sabes sobre la película _*Talentos Ocultos*_. ¿Ace
     // RETORNO
     return (
         <PagesLayout title='Trivia'>
-            <div className="mx-8 mt-8">
+            <div className="mx-8 mt-2 sm:mt-8">
                 {// CONDICIONAL
                 /* Comprobación del Estado de Muestra de los Resultados */
                 !show
@@ -266,7 +266,7 @@ Te reto a demostrar cuánto sabes sobre la película _*Talentos Ocultos*_. ¿Ace
                                 <span className="text-violet-500">({ item.id }/{ dataTrivia.length })</span> { item.question }
                             </p>
 
-                            <div className="p-8 grid gap-4 bg-gray bg-opacity-40 rounded-md sm:grid-cols-2">
+                            <div className="p-4 grid gap-4 bg-gray bg-opacity-40 rounded-md sm:p-8 sm:grid-cols-2">
                                 {item.options.map((element, index) => (
                                     <DivCheckTrivia
                                         element={element}

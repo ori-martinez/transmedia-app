@@ -10,6 +10,8 @@ import { IoLogoWhatsapp } from 'react-icons/io';
 import { useEffect, useState } from 'react';
 /* Utils */
 import { getMessageTotal } from '../../utils/helpers.jsx';
+/* React Copy to Clipboard */
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 // PÁGINA
 /* Trivia */
@@ -184,6 +186,14 @@ const Index = () => {
     const [ sliceActual, setSliceActual ] = useState(1);                /* Slice Actual de las Preguntas */
     const [ total, setTotal ] = useState(0);                            /* Puntaje Total de la Trivia */
     const [ show, setShow ] = useState(false);                          /* Estado de Muestra de los Resultados */
+    const [ clipboard, setClipboard ] = useState({                      /* Portapapeles  */
+        copied: false,
+        value: `¡Hola! 🚀
+
+Te reto a demostrar cuánto sabes sobre la película _*Talentos Ocultos*_. ¿Aceptas el desafío? 🎬🍿 Haz clic en el siguiente enlace para realizar una trivia sobre la película: https://talentosocultosfans.vercel.app/. No te preocupes, no es tan difícil como lanzar un cohete al espacio. 😉
+            
+¡Buena suerte! Y no olvides compartir tus resultados. 😉`,
+    });
 
     // FUNCIONES
     /* Manejador del Click */
@@ -236,6 +246,12 @@ const Index = () => {
             setNewDataTrivia([]);
         }
     }, [ newDataTrivia ]);
+
+    useEffect(() => {
+        // CONDICIONAL
+        /* Comprobación del Estado de Copiado del Portapapeles */
+        if (clipboard.copied) setTimeout(() => setClipboard({ ...clipboard, copied: false, }), 5000);
+    }, [ clipboard ]);
 
     // RETORNO
     return (
@@ -291,12 +307,18 @@ const Index = () => {
                                 >
                                     <CgSync className='mr-1 w-5 h-5' /> Repetir
                                 </button>
-                                <button
-                                    className="px-4 py-1 mt-4 inline-flex items-center bg-emerald rounded-full text-xs text-white font-bold transition-all ease-in-out hover:bg-emerald-dark sm:text-sm"
-                                    type="button"
-                                >
-                                    Compartir <IoLogoWhatsapp className='ml-1 w-4 h-4' />
-                                </button>
+
+                                <div className="flex flex-col items-center justify-center">
+                                    <CopyToClipboard onCopy={() => setClipboard({ ...clipboard, copied: true, })} text={clipboard.value}>
+                                        <button className="px-4 py-1 mt-4 inline-flex items-center bg-emerald rounded-full text-xs text-white font-bold transition-all ease-in-out hover:bg-emerald-dark sm:text-sm" type="button">
+                                            Compartir <IoLogoWhatsapp className='ml-1 w-4 h-4' />
+                                        </button>
+                                    </CopyToClipboard>
+
+                                    {// CONDICIONAL
+                                    /* Comprobación del Estado de Copiado del Portapapeles */
+                                    clipboard.copied && (<div className="text-xs text-blue-dark sm:text-sm">Mensaje Copiado!</div>)}
+                                </div>
                             </div>
                         </div>
                     )

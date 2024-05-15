@@ -22,14 +22,14 @@ export const BasicHeader = () => (
                             <Link className='flex items-center' to='/'>
                                 <img
                                     alt='Logo'
-                                    className='w-10 h-auto'
+                                    className='w-10 h-auto hidden md:block'
                                     src={images.logo}
                                 />
 
-                                <div className="ml-2 relative inline-block px-2">
+                                <div className="px-2 ml-2 relative inline-block">
                                     <div className="absolute inset-0 transform skew-x-12 bg-violet-400" />
                                         
-                                    <span className="relative text-text-gray-800 text-2xl text-center font-bold font-basker">Talentos Ocultos Fans</span>
+                                    <span className="relative text-gray-800 text-2xl text-center font-bold font-basker">Talentos Ocultos Fans</span>
                                 </div>
                             </Link>
                         </div>

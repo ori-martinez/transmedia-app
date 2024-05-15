@@ -3,7 +3,7 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6';
 
 // COMPONENTE
 /* Botones de Navgeación entre las Preguntas de la Trivia */
-export const NavButtonTrivia = ({ dataTrivia, setDataTrivia, item, setShow, sliceActual, setSliceActual, trivia }) => {
+export const NavButtonTrivia = ({ dataTrivia, item, showResults, sliceActual, setSliceActual }) => {
     // CONDICIONAL
     /* Comprobación del Slice Actual Diferente de 1 */
     if (sliceActual === 1) return (
@@ -33,10 +33,7 @@ export const NavButtonTrivia = ({ dataTrivia, setDataTrivia, item, setShow, slic
             <button
                 className="px-4 py-1 mt-4 inline-flex items-center bg-emerald rounded-full text-xs text-white font-bold transition-all ease-in-out disabled:bg-emerald hover:bg-emerald-dark sm:text-sm"
                 disabled={!item.done}
-                onClick={() => {
-                    setShow(true);
-                    setDataTrivia(trivia);
-                }}
+                onClick={() => showResults()}
                 type="button"
             >
                 Resultados

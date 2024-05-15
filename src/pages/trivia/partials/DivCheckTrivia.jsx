@@ -5,7 +5,7 @@ import { FaCircleCheck, FaCircleXmark } from 'react-icons/fa6';
 /* Contenedor para la Selección de Respuestas de la Trivia */
 export const DivCheckTrivia = ({ element, item, onClick }) => (
     <div
-        className={`p-2 grid grid-cols-8 gap-2 place-items-center border ${!element.selected ? element.isAnswer && item.done ? 'bg-emerald-light border-emerald text-emerald-dark' : 'bg-gray-100 border-gray font-medium cursor-pointer' : element.isAnswer ? 'bg-emerald-light border-emerald text-emerald-dark' : 'bg-ruby-light border-ruby text-ruby-dark'} rounded-md font-bold`}
+        className={`p-1 grid grid-cols-8 gap-1 place-items-center border ${!element.selected ? element.isAnswer && item.done ? 'bg-emerald-light border-emerald text-emerald-dark' : 'bg-gray-100 border-gray font-medium cursor-pointer' : element.isAnswer ? 'bg-emerald-light border-emerald text-emerald-dark' : 'bg-ruby-light border-ruby text-ruby-dark'} rounded-md font-bold sm:gap-2 sm:p-2`}
         onClick={() => {
             // CONDICIONAL
             /* Comprobación del Estado de Listo de la Pregunta */

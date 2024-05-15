@@ -22,14 +22,14 @@ const Index = () => (
                         <TabPanel className='p-6 flex flex-wrap items-center justify-center rounded-xl sm:flex-nowrap sm:justify-start' key={id}>
                             <img
                                 alt={name}
-                                className="w-auto h-52 rounded-md"
+                                className="w-auto h-48 rounded-md"
                                 src={image}
                             />
 
                             <div className="mx-0 mt-8 text-gray-800 sm:mx-8 sm:mt-0">
                                 <h2 className="mb-4 text-blue text-2xl text-center font-basker font-bold sm:text-3xl">{ name }</h2>
 
-                                <div className="pr-4 h-40 flex flex-col items-center text-sm overflow-auto sm:h-60 sm:text-base">
+                                <div className="pr-4 h-24 flex flex-col items-center text-sm overflow-auto sm:h-60 sm:text-base">
                                     <div>
                                         <span className="font-bold">Fecha de Nacimiento:</span> { birthday }
                                     </div>

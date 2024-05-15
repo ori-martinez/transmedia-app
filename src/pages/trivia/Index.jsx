@@ -106,12 +106,12 @@ const Index = () => {
             id: 9,
             done: false,
             options: [
-                { isAnswer: false, selected: false, text: 'Teorema de Pitágoras', },
+                { isAnswer: false, selected: false, text: 'Fórmula Frenet', },
                 { isAnswer: true, selected: false, text: 'Método de Euler', },
-                { isAnswer: false, selected: false, text: 'Ecuaciones Diferenciales', },
-                { isAnswer: false, selected: false, text: 'Leyes de Newton', },
+                { isAnswer: false, selected: false, text: 'Algoritmo de Ortonormalización', },
+                { isAnswer: false, selected: false, text: 'Teorema de Euclides', },
             ],
-            question: '¿Qué método antiguo se sugirió para resolver el problema matemático?',
+            question: '¿Con qué artificio o fórmula matemática logra Katherine y el "Space Task Force" resolver el problema del cambio de órbita para el reingreso?',
         },
         {
             id: 10,
@@ -129,9 +129,9 @@ const Index = () => {
             done: false,
             options: [
                 { isAnswer: true, selected: false, text: 'Fortran', },
-                { isAnswer: false, selected: false, text: 'C+', },
-                { isAnswer: false, selected: false, text: 'Microsoft', },
-                { isAnswer: false, selected: false, text: 'Google', },
+                { isAnswer: false, selected: false, text: 'Comtran', },
+                { isAnswer: false, selected: false, text: 'Cobol', },
+                { isAnswer: false, selected: false, text: 'Assembly', },
             ],
             question: '¿Qué lenguaje computacional tuvo que aprender Dorothy para operar la computadora de la IBM?',
         },
@@ -145,6 +145,39 @@ const Index = () => {
                 { isAnswer: false, selected: false, text: 'Calculadora', },
             ],
             question: '¿Cuál era el título del puesto de Katherine en la NASA?',
+        },
+        {
+            id: 13,
+            done: false,
+            options: [
+                { isAnswer: false, selected: false, text: 'Freedom', },
+                { isAnswer: true, selected: false, text: ' Friendship 7', },
+                { isAnswer: false, selected: false, text: 'Sputnik', },
+                { isAnswer: false, selected: false, text: 'Redstone', },
+            ],
+            question: '¿Cómo se llamaba la cápsula donde John Glenn iba a bordo?',
+        },
+        {
+            id: 14,
+            done: false,
+            options: [
+                { isAnswer: false, selected: false, text: 'Bill J. Clinton', },
+                { isAnswer: false, selected: false, text: 'Richard M. Nixon', },
+                { isAnswer: true, selected: false, text: 'John F. Kennedy', },
+                { isAnswer: false, selected: false, text: 'Jimmy Carter Jr.', },
+            ],
+            question: '¿Cuál fue el presidente de los Estados Unidos durante los eventos finales de la película??',
+        },
+        {
+            id: 15,
+            done: false,
+            options: [
+                { isAnswer: true, selected: false, text: '2017', },
+                { isAnswer: false, selected: false, text: '2018', },
+                { isAnswer: false, selected: false, text: '2015', },
+                { isAnswer: false, selected: false, text: '2014', },
+            ],
+            question: '¿En qué año se estrenó internacionalmente la película?',
         },
     ]);
     const [ newDataTrivia, setNewDataTrivia ] = useState([]);           /* Nuevo Arreglo con las Preguntas para las Selecciones Erróneas */
@@ -167,7 +200,6 @@ const Index = () => {
         let newItem = { ...item, done: true, options: newOptions, }         /* Nuevo Item para las Preguntas */
 
         newData.splice(item.id - 1, 1, newItem);
-        setDataTrivia(newData);
 
         // CONDICIONAL
         /* Comprobación de la Selección del Elemento de la Respuesta Correcta */
@@ -214,7 +246,9 @@ const Index = () => {
                 !show
                     ? dataTrivia.map((item) => (
                         <div className={`w-80 sm:w-[36rem] lg:w-[48rem] ${sliceActual !== item.id && 'hidden'}`} key={item.id}>
-                            <p className="mb-4 text-sm text-gray-800 text-center font-semibold sm:text-lg">{ item.question }</p>
+                            <p className="mb-4 text-sm text-gray-800 text-center font-semibold sm:text-lg">
+                                <span className="text-violet-500">({ item.id }/{ dataTrivia.length })</span> { item.question }
+                            </p>
 
                             <div className="p-8 grid gap-4 bg-gray bg-opacity-40 rounded-md sm:grid-cols-2">
                                 {item.options.map((element, index) => (
@@ -238,7 +272,12 @@ const Index = () => {
                     ))
                     : (
                         <div className="w-80 sm:w-[36rem] lg:w-[48rem] flex flex-col items-center justify-center">
-                            <p className="mb-2 text-2xl text-violet-500 font-bold font-basker sm:text-3xl">{ getMessageTotal(total).fanTitle }</p>
+                            <div className="px-2 mb-2 relative inline-block">
+                                <div className="absolute inset-0 transform -skew-x-12 bg-gray-300" />
+                                        
+                                <span className="relative text-2xl text-violet-500 font-bold font-basker sm:text-3xl">{ getMessageTotal(total).fanTitle }</span>
+                            </div>
+                            
                             <p className="mb-4 text-sm text-gray-800 text-center sm:text-base">{ getMessageTotal(total).message }</p>
                             <p className="mb-8 text-base sm:text-xl">
                                 <span className="text-blue-light font-bold">Total de Aciertos:</span> { total }
@@ -250,7 +289,7 @@ const Index = () => {
                                     onClick={() => location.reload()}
                                     type="button"
                                 >
-                                    <CgSync className='mr-1 w-4 h-4' /> Repetir
+                                    <CgSync className='mr-1 w-5 h-5' /> Repetir
                                 </button>
                                 <button
                                     className="px-4 py-1 mt-4 inline-flex items-center bg-emerald rounded-full text-xs text-white font-bold transition-all ease-in-out hover:bg-emerald-dark sm:text-sm"

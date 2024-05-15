@@ -29,7 +29,7 @@ export const BasicHeader = () => (
                                 <div className="px-2 ml-2 relative inline-block">
                                     <div className="absolute inset-0 transform skew-x-12 bg-violet-400" />
                                         
-                                    <span className="relative text-text-gray-800 text-2xl text-center font-bold font-basker">Talentos Ocultos Fans</span>
+                                    <span className="relative text-gray-800 text-2xl text-center font-bold font-basker">Talentos Ocultos Fans</span>
                                 </div>
                             </Link>
                         </div>

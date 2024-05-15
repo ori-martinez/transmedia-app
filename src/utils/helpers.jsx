@@ -66,23 +66,23 @@ export const getMessageTotal = (total) => {
     let message = '';           /* Mensaje */
 
     // CONDICIONAL
-    /* Comprobación del Total Igual que 0 */
-    if (total === 0) {
+    /* Comprobación del Total Mayor o Igual que 0 y Menor o Igual que 3 */
+    if (total >= 0 && total <= 3) {
         fanTitle = 'Cero Fan';
         message = 'Parece que aún no has descubierto los secretos de Talentos Ocultos. No te preocupes, siempre puedes volver a ver la película y aprender más sobre estas increíbles mujeres. ¡Sigue intentándolo!';
     }
-    /* Comprobación del Total Mayor que 0 y Menor o Igual que 4 */
-    else if (total > 0 && total <= 4) {
+    /* Comprobación del Total Mayor que 3 y Menor o Igual que 7 */
+    else if (total > 3 && total <= 7) {
         fanTitle = 'Fan Casual';
         message = '¡Buen trabajo! Has demostrado un conocimiento básico sobre Talentos Ocultos. Sigue explorando la historia de estas mujeres extraordinarias y verás cómo tu conocimiento crece.';
     }
-    /* Comprobación del Total Mayor que 4 y Menor o Igual que 8 */
-    else if (total > 4 && total <= 8) {
+    /* Comprobación del Total Mayor que 7 y Menor o Igual que 11 */
+    else if (total > 7 && total <= 11) {
         fanTitle = 'Fan Honorable';
         message = '¡Impresionante! Tu conocimiento sobre Talentos Ocultos es notable. Eres un verdadero fan y claramente aprecias la historia de estas mujeres pioneras. ¡Sigue así!';
     }
-    /* Comprobación del Total Mayor que 8 y Menor o Igual que 12 */
-    else if (total > 8 && total <= 12) {
+    /* Comprobación del Total Mayor que 11 y Menor o Igual que 15 */
+    else if (total > 11 && total <= 15) {
         fanTitle = 'Mega Fan';
         message = '¡Increíble! Tu conocimiento sobre Talentos Ocultos es excepcional. Eres un verdadero experto en la película y en la historia de estas mujeres inspiradoras. ¡Felicidades, eres un Mega Fan!';
     }

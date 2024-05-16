@@ -9,7 +9,7 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 /* Actrices Principales */
 const Index = () => (
     <PagesLayout title='Actrices Principales'>
-        <div className="mt-4 w-full max-w-4xl sm:mt-12">
+        <div className="mt-4 w-full max-w-4xl sm:mt-8">
             <TabGroup>
                 <TabList className='flex items-center justify-center'>
                     {tabsActresses.map(({ id, name }) => (

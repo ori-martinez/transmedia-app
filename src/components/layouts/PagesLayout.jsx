@@ -10,7 +10,7 @@ export const PagesLayout = ({ children, title }) =>(
         {/* Cabecera */}
         <BasicHeader />
 
-        <UpTransition className='z-0 absolute inset-0 flex flex-col items-center justify-center'>
+        <UpTransition className='py-24 h-full flex flex-col items-center justify-center'>
             <h1 className="text-3xl text-blue-dark text-center font-extrabold sm:text-4xl">{ title }</h1>
 
             { children }
